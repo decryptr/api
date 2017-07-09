@@ -8,6 +8,7 @@ RUN \
   rm -rf /var/lib/apt/lists/*
 
 RUN R -e "install.packages('devtools')"
+RUN R -e "install.packages('base64enc')"
 RUN R -e "install.packages('reticulate')"
 RUN R -e "install.packages('tensorflow')"
 RUN R -e "tensorflow::install_tensorflow()"
