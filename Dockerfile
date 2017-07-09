@@ -12,6 +12,7 @@ RUN R -e "install.packages('reticulate')"
 RUN R -e "install.packages('tensorflow')"
 RUN R -e "tensorflow::install_tensorflow()"
 RUN R -e "devtools::install_github('rstudio/keras')"
+
 RUN R -e "devtools::install_github('decryptr/decryptrModels')"
 RUN R -e "devtools::install_github('decryptr/decryptr')"
 RUN R -e "devtools::install_github('decryptr/api')"
