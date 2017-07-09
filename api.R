@@ -9,9 +9,11 @@ suppressMessages(suppressWarnings({
 }))
 
 # arq <- '~/data-raw/decryptr/rfb/captcha2a9710092d73.png'
-# img <- arq %>% 
-#   readr::read_file_raw() %>% 
+# img <- arq %>%
+#   readr::read_file_raw() %>%
 #   base64enc::base64encode()
+
+# add RFC 2397 The "data" URL scheme?
 
 #* @post /predict_rfb
 predict_rfb <- function(img) {
