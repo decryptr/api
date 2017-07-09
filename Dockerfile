@@ -17,4 +17,4 @@ RUN R -e "devtools::install_github('decryptr/decryptrModels')"
 RUN R -e "devtools::install_github('decryptr/decryptr')"
 RUN R -e "devtools::install_github('decryptr/api')"
 
-CMD ["/usr/local/lib/R/site-library/api/app.R"]
+CMD ["/usr/local/lib/R/site-library/api/api.R"]
