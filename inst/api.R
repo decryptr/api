@@ -1,4 +1,5 @@
 library(magrittr)
+library(decryptr)
 
 reticulate::py_available(TRUE)
 suppressMessages(suppressWarnings({
