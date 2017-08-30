@@ -2,6 +2,8 @@ version: '2'
 services:
   api:
     build: .
+    volumes:
+     - .:/code
     restart: always
     ports:
      - 8000
