@@ -1,21 +1,22 @@
-# api
+# decryptr/api
 
 Dockerfile and plumber to break captchas
 
 ## Usage
 
-To serve the API on `http://localhost:8000` with no load balancing, run the
-commands below:
+To serve the API on [http://localhost:80](http://localhost:80) 
+with no load balancing, run the command below:
 
 ```
-sudo docker run decryptr/api:latest
+docker run -p 80:8000 decryptr/api:latest
 ```
 
-To serve the API on `http://localhost:80` with load balancing over 3 instances,
-run the commands below:
+To serve the API with load balancing over 3 instances,
+run the commands below (replacing your GitHub personal
+access token):
 
 ```
-sudo apt install docker-compose
-sudo docker pull decryptr/api:balanced
-sudo docker-compose up --scale decryptr/api:balanced=3
+git clone https://github.com/decryptr/api.git; cd api
+docker build --build-arg GITHUB_PAT={YOUR_GH_PAT} -t api .
+docker-compose up --scale api=3
 ```
