@@ -1,0 +1,15 @@
+version: '2'
+services:
+  api:
+    build: .
+    restart: always
+    ports:
+     - 8000
+  lb:
+    image: 'dockercloud/haproxy:1.2.1'
+    links:
+     - api
+    volumes:
+     - /var/run/docker.sock:/var/run/docker.sock
+    ports:
+     - 80:80
