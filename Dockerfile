@@ -3,7 +3,7 @@ MAINTAINER decryptr <contato@decryptr.com.br>
 
 # Install Python.
 RUN \
-  apt-get update && \
+  apt-get update && apt-get install -y apt-transport-https && \
   apt-get install -y python python-dev python-pip python-virtualenv && \
   rm -rf /var/lib/apt/lists/*
 
