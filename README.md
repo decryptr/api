@@ -4,7 +4,7 @@ Dockerfile and plumber to break captchas
 
 ## Usage
 
-To serve the API on [http://localhost:80](http://localhost:80) 
+To serve the API on [http://localhost:80](http://localhost:80)
 with no load balancing, run the command below:
 
 ```
@@ -17,6 +17,5 @@ access token):
 
 ```
 git clone https://github.com/decryptr/api.git; cd api
-docker build --build-arg GITHUB_PAT={YOUR_GH_PAT} -t api .
 docker-compose up --scale api=3
 ```
