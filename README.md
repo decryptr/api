@@ -24,5 +24,15 @@ source("key-generator.R")
 key_generator("name-of-the-endpoint")
 ```
 
-The function will make necessary modifications to `keys.yaml`. They generated key will be printed to the console.
+The function will make necessary modifications to `keys.yaml`. They generated key will be printed to the console. **Note** The key is printed only once.
 
+## Updating the endpoint
+
+On shell, type:
+
+```
+now
+now alisas {{<SOURCE URL | ID>}} decryptr
+```
+
+You must have `now` CLI installed.
