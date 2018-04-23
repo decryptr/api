@@ -67,4 +67,4 @@ res <- httr::POST(
 httr::content(res)
 ```
 
-Please visit [decryptr.netlify.com](decryptr.netlify.com) fore more info and to obtain your own key.
+Please visit [decryptr.netlify.com](http://decryptr.netlify.com) fore more info and to obtain your own key.
