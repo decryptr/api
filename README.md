@@ -36,3 +36,35 @@ now alisas {{<SOURCE URL | ID>}} decryptr
 ```
 
 You must have `now` CLI installed.
+
+## Using from R
+
+You can use the API from with the following chunk of code:
+
+```
+library(magrittr)
+
+# parameters
+arq <- "https://decryptr.netlify.com/img/sample-captcha.png"
+key <- "your-api-key"
+
+# converting the image to base64
+
+img <- arq %>%
+  readr::read_file_raw() %>%
+  base64enc::base64encode()
+
+# post request
+res <- httr::POST(
+  "https://decryptr.now.sh/rfb",
+  body = list(
+    img = img,
+    key = key
+  ),
+  encode = "json"
+)
+
+httr::content(res)
+```
+
+Please visit [decryptr.netlify.com](decryptr.netlify.com) fore more info and to obtain your own key.
