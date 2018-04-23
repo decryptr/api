@@ -32,7 +32,7 @@ On shell, type:
 
 ```
 now
-now alisas {{<SOURCE URL | ID>}} decryptr
+now alias {{<SOURCE URL | ID>}} decryptr
 ```
 
 You must have `now` CLI installed.
