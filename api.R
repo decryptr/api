@@ -3,6 +3,7 @@ library(base64enc)
 
 model_rfb <- load_model("rfb")
 model_rsc <- load_model("rsc")
+model_cadesp <- load_model("cadesp")
 
 keys <- yaml::read_yaml("keys.yaml")
 
@@ -30,5 +31,15 @@ rsc <- function(img, key){
   decrypt(img_decoded, model_rsc)
 }
 
+#* post/cadesp
+cadesp <- function(img, key){
 
+  key <- openssl::sha256(key)
+  if(!key %in% keys$cadesp | is.null(key) | is.na(key)) {
+    stop("Not authorized. Get an api key from decryptr.com.br")
+  }
+
+  img_decoded <- base64enc::base64decode(img)
+  decrypt(img_decoded, model_cadesp)
+}
 

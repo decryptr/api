@@ -24,7 +24,7 @@ RUN R -e "devtools::install_github('rstudio/keras')"
 RUN R -e "keras::install_keras()"
 
 # Install captcha-breaking captchas
-RUN R -e "devtools::install_github('decryptr/decryptrModels')"
+RUN R -e "devtools::install_github('decryptr/decryptrModels', force = TRUE)"
 RUN R -e "devtools::install_github('decryptr/decryptr')"
 
 COPY api.R api.R
