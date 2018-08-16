@@ -31,11 +31,15 @@ The function will make necessary modifications to `keys.yaml`. They generated ke
 On shell, type:
 
 ```
-now
-now alias {{<SOURCE URL | ID>}} decryptr
+docker build dfalbel/decryptr
+docker push dfalbel/decryptr
+hyper stop decryptr
+hyper rm decryptr
+hyper run -d -p 80:8000 --name decryptr dfalbel/decryptr
+hyper fip attach decryptr decryptr
 ```
 
-You must have `now` CLI installed.
+You must have `hyper.sh` CLI installed.
 
 ## Using from R
 

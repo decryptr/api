@@ -5,3 +5,4 @@ key_generator <- function(endpoint) {
   yaml::write_yaml(keys, file = "keys.yaml")
   new_key
 }
+
