@@ -19,7 +19,7 @@ rfb <- function(img, key){
   decrypt(img_decoded, model_rfb)
 }
 
-#* post/rsc
+#* @post /rsc
 rsc <- function(img, key){
 
   key <- openssl::sha256(key)
@@ -31,7 +31,7 @@ rsc <- function(img, key){
   decrypt(img_decoded, model_rsc)
 }
 
-#* post/cadesp
+#* @post /cadesp
 cadesp <- function(img, key){
 
   key <- openssl::sha256(key)
@@ -43,3 +43,12 @@ cadesp <- function(img, key){
   decrypt(img_decoded, model_cadesp)
 }
 
+#* @get /liveness_check
+liveness_check <- function(){
+  200
+}
+
+#* @get /readiness_check
+readiness_check <- function(){
+  200
+}
