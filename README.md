@@ -8,8 +8,8 @@ To serve the API on [http://localhost:80](http://localhost:80)
 with no load balancing, run the command below:
 
 ```
-docker build api .
-docker run -p 80:8000 api
+docker build -t api .
+docker run -p 80:8080 api
 ```
 
 ## Adding a new key
@@ -31,15 +31,10 @@ The function will make necessary modifications to `keys.yaml`. They generated ke
 On shell, type:
 
 ```
-docker build dfalbel/decryptr
-docker push dfalbel/decryptr
-hyper stop decryptr
-hyper rm decryptr
-hyper run -d -p 80:8000 --name decryptr dfalbel/decryptr
-hyper fip attach decryptr decryptr
+gcloud app deploy --project decryptr-196601
 ```
 
-You must have `hyper.sh` CLI installed.
+You must have `gcloud` CLI installed.
 
 ## Using from R
 
