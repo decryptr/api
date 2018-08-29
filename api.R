@@ -42,13 +42,3 @@ cadesp <- function(img, key){
   img_decoded <- base64enc::base64decode(img)
   decrypt(img_decoded, model_cadesp)
 }
-
-#* @get /liveness_check
-liveness_check <- function(){
-  200
-}
-
-#* @get /readiness_check
-readiness_check <- function(){
-  200
-}

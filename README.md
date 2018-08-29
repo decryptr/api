@@ -31,10 +31,15 @@ The function will make necessary modifications to `keys.yaml`. They generated ke
 On shell, type:
 
 ```
-gcloud app deploy --project decryptr-196601
+hyper stop decryptr
+hyper rm decryptr
+docker build -t api .
+hyper load -l api:latest
+hyper run -d --name decryptr -p 80:8080 --size=s4 api
+hyper fip attach decryptr decryptr
 ```
 
-You must have `gcloud` CLI installed.
+You must have `hyper` CLI installed.
 
 ## Using from R
 
