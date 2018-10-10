@@ -34,7 +34,7 @@ On shell, type:
 docker build -t dfalbel/api .
 docker push dfalbel/api
 hyper stop decryptr
-hyper rm decryptr
+hyper rm decryptr -v
 hyper pull dfalbel/api
 hyper run -d --name decryptr -p 80:8080 --size=s4 dfalbel/api
 hyper fip attach decryptr decryptr
