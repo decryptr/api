@@ -9,7 +9,7 @@ with no load balancing, run the command below:
 
 ```
 docker build -t api .
-docker run -p 80:8080 api
+docker run -p 80:80 api
 ```
 
 ## Adding a new key
@@ -33,14 +33,19 @@ On shell, type:
 ```
 docker build -t dfalbel/api .
 docker push dfalbel/api
-hyper stop decryptr
-hyper rm decryptr -v
-hyper pull dfalbel/api
-hyper run -d --name decryptr -p 80:8080 --size=s4 dfalbel/api
-hyper fip attach decryptr decryptr
+gcloud compute instances create-with-container decryptr \
+ --project=decryptr-196601 \
+ --container-image dfalbel/api \
+ --machine-type g1-small \
+ --tags http-server \
+ --address 104.197.127.86 \
+ --metadata startup-script='#! /bin/bash
+sudo iptables -w -A INPUT -p tcp --dport 80 -j ACCEPT
+EOF
+'
 ```
 
-You must have `hyper` CLI installed.
+You must have `gcloud` CLI installed.
 
 ## Using from R
 
