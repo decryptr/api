@@ -17,6 +17,7 @@ rfb <- function(img, key){
   }
 
   img_decoded <- base64enc::base64decode(img)
+  message(Sys.time(), ": rfb")
   decrypt(img_decoded, model_rfb)
 }
 
@@ -29,6 +30,7 @@ rsc <- function(img, key){
   }
 
   img_decoded <- base64enc::base64decode(img)
+  message(Sys.time(), ": rsc")
   decrypt(img_decoded, model_rsc)
 }
 
@@ -41,6 +43,7 @@ cadesp <- function(img, key){
   }
 
   img_decoded <- base64enc::base64decode(img)
+  message(Sys.time(), ": cadesp")
   decrypt(img_decoded, model_cadesp)
 }
 
@@ -53,5 +56,6 @@ nfesp <- function(img, key){
   }
 
   img_decoded <- base64enc::base64decode(img)
+  message(Sys.time(), ": nfesp")
   decrypt(img_decoded, model_nfesp)
 }
