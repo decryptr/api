@@ -8,6 +8,11 @@ model_nfesp <- load_model("nfesp")
 
 keys <- yaml::read_yaml("keys.yaml")
 
+#* @get /
+root <- function() {
+  "hi"
+}
+
 #* @post /rfb
 rfb <- function(img, key){
 
