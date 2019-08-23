@@ -1,8 +1,6 @@
 library(decryptr)
 library(base64enc)
 
-reticulate::use_virtualenv("r-reticulate", required = TRUE)
-
 model_rfb <- load_model("rfb")
 model_rsc <- load_model("rsc")
 model_cadesp <- load_model("cadesp")
