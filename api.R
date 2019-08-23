@@ -10,7 +10,7 @@ keys <- yaml::read_yaml("keys.yaml")
 
 #* @get /
 root <- function() {
-  "hi"
+  "hello world"
 }
 
 #* @post /rfb
