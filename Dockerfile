@@ -9,7 +9,7 @@ RUN \
 RUN R -e "install.packages(c('plumber', 'yaml', 'base64enc', 'remotes'))"
 RUN R -e "remotes::install_github('rstudio/tensorflow')"
 RUN R -e "remotes::install_github('rstudio/keras')"
-RUN R -e "keras::install_keras()"
+RUN R -e "keras::install_keras(tensorflow = '1.13')"
 
 # Install captcha-breaking captchas
 RUN R -e "remotes::install_github('decryptr/decryptr')"
