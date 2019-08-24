@@ -1,16 +1,16 @@
-FROM rocker/tidyverse
+FROM rocker/tensorflow
 MAINTAINER decryptr <dfalbel@gmail.com>
 
 RUN \
-  apt-get update && apt-get install -y apt-transport-https && \
-  apt-get install -y libpython-dev python3 python3-pip python3-virtualenv python3-venv libssl-dev libjpeg-dev libmagick++-dev libhdf5-dev && \
+  apt-get update &&
+  apt-get install -y apt-transport-https && \
+  apt-get install -y libssl-dev libjpeg-dev libmagick++-dev && \
   rm -rf /var/lib/apt/lists/*
 
 RUN R -e "install.packages(c('plumber', 'yaml', 'base64enc', 'remotes'))"
 RUN R -e "remotes::install_github('rstudio/reticulate')"
 RUN R -e "remotes::install_github('rstudio/tensorflow')"
 RUN R -e "remotes::install_github('rstudio/keras')"
-RUN R -e "keras::install_keras(tensorflow = '1.13.2', extra_packages = 'h5py')"
 
 # Install captcha-breaking captchas
 RUN R -e "remotes::install_github('decryptr/decryptr')"

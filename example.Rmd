@@ -1,0 +1,45 @@
+---
+title: "Untitled"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Suppose I have 2 overloaded functions in the C++ library I am creating wrapers for R:
+
+```{Rcpp}
+int fun (int i) {
+  return i + 1;
+}
+
+int fun (int i, int j) {
+  return i + j
+}
+```
+
+I am writing the C++ code like this:
+
+```{Rcpp}
+int my_wraper (int i, Rcpp::Nullable<int> j) {
+  
+  int out;
+  
+  if (j.isNull()) {
+    out = fun(i);
+  } else {
+    out = fun(i, j);
+  }
+  
+  return  out;
+}
+```
+
+The problem is that this quickly becomes tedious if the function has 10
+different signatures. Would there be any way to 
+
+
+
+
+
