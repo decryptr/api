@@ -2,7 +2,7 @@ FROM rocker/tensorflow
 MAINTAINER decryptr <dfalbel@gmail.com>
 
 RUN \
-  apt-get update &&
+  apt-get update && \
   apt-get install -y apt-transport-https && \
   apt-get install -y libssl-dev libjpeg-dev libmagick++-dev && \
   rm -rf /var/lib/apt/lists/*
