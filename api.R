@@ -17,7 +17,7 @@ root <- function() {
 rfb <- function(img, key){
 
   key <- openssl::sha256(key)
-  if(!key %in% keys$rfb | is.null(key) | is.na(key)) {
+  if(!key %in% keys | is.null(key) | is.na(key)) {
     stop("Not authorized. Get an api key from decryptr.com.br")
   }
 
@@ -30,7 +30,7 @@ rfb <- function(img, key){
 rsc <- function(img, key){
 
   key <- openssl::sha256(key)
-  if(!key %in% keys$rsc | is.null(key) | is.na(key)) {
+  if(!key %in% keys | is.null(key) | is.na(key)) {
     stop("Not authorized. Get an api key from decryptr.com.br")
   }
 
@@ -43,7 +43,7 @@ rsc <- function(img, key){
 cadesp <- function(img, key){
 
   key <- openssl::sha256(key)
-  if(!key %in% keys$cadesp | is.null(key) | is.na(key)) {
+  if(!key %in% keys | is.null(key) | is.na(key)) {
     stop("Not authorized. Get an api key from decryptr.com.br")
   }
 
@@ -56,7 +56,7 @@ cadesp <- function(img, key){
 nfesp <- function(img, key){
 
   key <- openssl::sha256(key)
-  if(!key %in% keys$nfesp | is.null(key) | is.na(key)) {
+  if(!key %in% keys | is.null(key) | is.na(key)) {
     stop("Not authorized. Get an api key from decryptr.com.br")
   }
 
