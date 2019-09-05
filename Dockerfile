@@ -7,13 +7,13 @@ RUN \
   apt-get install -y libssl-dev libjpeg-dev libmagick++-dev && \
   rm -rf /var/lib/apt/lists/*
 
-RUN R -e "install.packages(c('plumber', 'yaml', 'base64enc', 'remotes'))"
-RUN R -e "remotes::install_github('rstudio/reticulate')"
-RUN R -e "remotes::install_github('rstudio/tensorflow')"
-RUN R -e "remotes::install_github('rstudio/keras')"
+RUN Rscript -e "install.packages(c('plumber', 'yaml', 'base64enc', 'remotes'))"
+RUN Rscript -e "remotes::install_github('rstudio/reticulate')"
+RUN Rscript -e "remotes::install_github('rstudio/tensorflow')"
+RUN Rscript -e "remotes::install_github('rstudio/keras')"
 
 # Install captcha-breaking captchas
-RUN R -e "remotes::install_github('decryptr/decryptr')"
+RUN Rscript -e "remotes::install_github('decryptr/decryptr')"
 
 COPY api.R api.R
 COPY keys.yaml keys.yaml
